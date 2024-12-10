@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////
 /////////////// PRUEBAS STANDARD_USER //////////////////
 /////////////////////////////////////////////////////////
-/*
+
 describe("4.1 - Pruebas standard_user", () => {
   it("4.1.1 - Ingreso con credenciales Válidas", () => {
     //visitamos el login de la web (home)
@@ -159,12 +159,11 @@ describe("4.1 - Pruebas standard_user", () => {
     cy.url().should("eq", "https://www.saucedemo.com/");
   });
 });
-*/
+
 /////////////////////////////////////////////////////////
 /////////////// PRUEBAS PROBLEM_USER //////////////////
 /////////////////////////////////////////////////////////
 describe("4.2 - Pruebas problem_user", () => {
-  /*
   it("4.2.1 - Ingreso con credenciales Válidas", () => {
     //visitamos el login de la web (home)
     cy.visit("https://www.saucedemo.com/");
@@ -204,8 +203,8 @@ describe("4.2 - Pruebas problem_user", () => {
     cy.get("a.shopping_cart_link").click();
     cy.url().should("eq", "https://www.saucedemo.com/cart.html");
   });
-  */
-  it("4.1.3 - Realizar checkout", () => {
+
+  it("4.2.3 - Realizar checkout", () => {
     //logueamos con usuario válido (standard_user)
     cy.login("problem_user", "secret_sauce");
     //cargamos los productos y vamos al detalle del carrito
@@ -239,7 +238,7 @@ describe("4.2 - Pruebas problem_user", () => {
       .type("User");
     cy.get("input#last-name")
       .should("have.attr", "placeholder", "Last Name")
-      .type("Standard");
+      .type("Problem");
     cy.get("input#postal-code")
       .should("have.attr", "placeholder", "Zip/Postal Code")
       .type("500");
